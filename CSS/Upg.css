@@ -6,7 +6,7 @@
 
 :root {
     --main-radius: 5px;
-    --main-padding: 5px;
+    --main-padding: 0px;
 }
 
 body {
@@ -17,8 +17,8 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 1.2fr 1.2fr 1.2fr;
-    grid-template-rows: 0.3fr 5fr 6fr 1fr;
-    grid-template-areas: "nav nav nav" "main main main" "content1 content2 content3" "footer footer footer";
+    grid-template-rows: 1fr 10fr 4fr 4fr 1fr;
+    grid-template-areas: "nav nav nav" "main main main" "content1 content2 content3" "section section section" "footer footer footer";
     grid-gap: 1px;
     font-weight: 800;
     font-size: 12px;
@@ -27,17 +27,17 @@ body {
 }
 
 .logo {
-    top: 0%;
+    margin: left;
 }
 
 nav {
-    background: #a7ffeb;
     grid-area: nav;
+    height: 10vh;
+    background: #a7ffeb;
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    float: right;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
@@ -66,38 +66,54 @@ nav a:hover {
 }
 
 main {
-    background-color: rgb(1, 179, 119);
     grid-area: main;
+    height: 60vh;
+    background-color: rgb(1, 179, 119);
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
 }
 
-#content1 {
-    background: #6fffd2;
+.scale {
+    width: 77.7%;
+    height: auto;
+    position: relative;
+    /*background-position: center;*/
+}
+
+.content1 {
     grid-area: content1;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+    height: 50vh;
+    background: white;
+    vertical-align: top;
 }
 
-#content2 {
-    background: #64ffda;
+.content2 {
     grid-area: content2;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+    height: 50vh;
+    background: white;
+    vertical-align: top;
 }
 
-#content3 {
-    background: #73ffba;
+.content3 {
     grid-area: content3;
-    border-radius: var(--main-radius);
-    padding-top: var(--main-padding);
+    height: 50vh;
+    background: white;
+    vertical-align: top;
 }
 
 footer {
-    background: #1de9b6;
     grid-area: footer;
     border-radius: var(--main-radius);
     padding-top: var(--main-padding);
+    float: left;
+    display: block;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
 
 a {
@@ -106,16 +122,23 @@ a {
     font-family: inherit;
     text-decoration: none;
     font-weight: bold;
-    margin: 1rem;
+    margin: 0rem;
+}
+
+section {
+    grid-area: section;
+    height: 80vh;
+    width: 100%;
+    background-color: blue;
 }
 
 @media only screen and (max-width: 550px) {
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 2fr 1.2fr 1.2fr 1.2fr 1.2fr;
-        grid-template-areas: "nav" "main" "content1" "content2" "content3" "footer";
+        grid-template-rows: 0.5fr 2fr 1.2fr 1.2fr 1.2fr 3fr 0.3fr;
+        grid-template-areas: "nav" "main" "content1" "content2" "content3" "section" "footer";
     }
-    nav li {
+    nav {
         position: relative;
     }
 }

@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-radius: 5px;
+    --main-padding: 3px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: blue;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.2fr 1.2fr;
+    grid-template-rows: 1fr 4fr 4fr 1fr;
+    grid-template-areas: "nav nav" "content1 content2" "content1 content2" "footer footer";
+    grid-gap: 1px;
+    font-weight: 800;
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+}
+
+.logo {
+    margin: left;
+}
+
+nav {
+    grid-area: nav;
+    height: 10vh;
+    background: #71FABB;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 75px;
+    padding-top: 23px;
+    position: relative;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #1190CB;
+}
+
+.scale3 {
+    height: 652px;
+    width: 625px;
+    border-radius: var(--main-radius);
+}
+
+.content1 {
+    grid-area: content1;
+    height: 100vh;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.content2 {
+    margin-top: 3px;
+    grid-area: content2;
+    height: 100vh;
+    background: #64ffda;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    margin-top: 5px;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    float: left;
+    display: block;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    display: block;
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+@media only screen and (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1.2fr 1.2fr 0.3fr;
+        grid-template-areas: "nav" "content1" "content2" "footer";
+    }
+    nav {
+        position: relative;
+    }
+}
